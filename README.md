@@ -2,9 +2,7 @@
 
 Important topics to cover today:
 
-* Collection Routes
-
-* Member Routes
+* Collection Routes & Member Routes
 
 * Nested Resources
 
