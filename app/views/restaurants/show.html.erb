@@ -15,5 +15,24 @@
   <%= @restaurant.stars %>
 </p>
 
+
+<p>Reviews</p>
+
+<ul>
+  <% @restaurant.reviews.each do |review| %>
+    <li><%= "#{review.rating} - #{review.description}" %></li>
+  <% end %>
+</ul>
+
+<p>Leave a review!</p>
+
+<%= simple_form_for([@restaurant, @review]) do |f| %>
+  <%= f.input :description %>
+  <%= f.input :rating %>
+  <%= f.submit 'Create a review' %>
+<% end %>
+
+
+<%= link_to 'Details about the Chef', chef_restaurant_path(@restaurant) %> |
 <%= link_to 'Edit', edit_restaurant_path(@restaurant) %> |
 <%= link_to 'Back', restaurants_path %>
